@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AChallenge.DataAccess\AChallenge.DataAccess.csproj" />
+    <ProjectReference Include="..\AChallenge.Models\AChallenge.Models.csproj" />
+  </ItemGroup>
+
+</Project>

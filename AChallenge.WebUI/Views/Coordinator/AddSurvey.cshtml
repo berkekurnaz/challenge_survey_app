@@ -1,0 +1,27 @@
+﻿@model AChallenge.Models.Concrete.Survey
+@{
+    ViewData["Title"] = "AddSurvey";
+    Layout = "~/Views/Shared/_LayoutCoordinator.cshtml";
+}
+
+<form method="post" asp-controller="Coordinator" asp-action="AddSurvey">
+    <div class="card border-left-primary">
+        <div class="card-body">
+            <h3 class="text-center">Add a new survey</h3>
+            <hr />
+            <div class="form-group col-md-8 offset-md-2">
+                <label>Survey Title</label>
+                <input asp-for="Title" type="text" class="form-control" required />
+            </div>
+            <div class="form-group col-md-8 offset-md-2">
+                <label>Survey Description</label>
+                <input asp-for="Description" type="text" class="form-control" required />
+            </div>
+            <div class="form-group col-md-12">
+                <center><button type="submit" class="btn btn-info">Create Survey</button></center>
+            </div>
+        </div>
+    </div>
+    <br />
+</form>
+

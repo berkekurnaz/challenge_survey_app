@@ -1,0 +1,103 @@
+﻿@model AChallenge.Models.Concrete.Survey
+@{
+    ViewData["Title"] = "Survey";
+    Layout = "~/Views/Shared/_LayoutRespondent.cshtml";
+}
+
+@if (Model.Title != "ErrorCode202akfjryhskfhfgsgsgajskkf")
+{
+    <div>
+        <div class="card">
+            <div class="card-body">
+                <h4><b>Survey Title: </b>@Model.Title</h4>
+                <p>@Model.Description</p>
+            </div>
+        </div><br />
+
+        <form method="post" asp-controller="Respondent" asp-action="Survey" asp-route-Id="@Model.Id">
+            @{
+                int questionNumber = 1;
+                int questionSSS = 0;
+                int optionNumber = 0;
+            }
+            @foreach (var item in Model.Questions)
+            {
+                <div class="card">
+                    <div class="card-header">
+                        <h6><b>Question-@questionNumber: </b>@item.Title</h6>
+                    </div>
+                    <div class="card-body">
+                        @foreach (var option in item.Options)
+                        {
+                            optionNumber++;
+                            <div class="form-check">
+
+                                <input type="radio" name="radiovalue[@(questionSSS)]" id="radiovalue[@(questionSSS)]" value="@option" required />
+                                <label class="form-check-label">
+                                    @option
+                                </label>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+                <br />
+                optionNumber++;
+                questionNumber++;
+                questionSSS++;
+            }
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <p class="text-center"><b>Note: </b>If you complete this survey now, you will not be able to participate in this survey again.</p>
+                        <center><button type="submit" class="btn btn-info">Send Survey</button></center>
+                    </div>
+                </div>
+            </div><br />
+        </form>
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body text-center">
+            <h4>Note</h4>
+            <hr />
+            <h5>Since you have participated in this survey before, you will not view it.</h5>
+            <a href="/Respondent/OpenSurveys/" class="btn btn-info">Back to menu</a>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        @{ 
+            int qNumber = 1;
+        }
+        @foreach (var q2 in Model.Questions)
+        {
+            <div class="col-md-6">
+                <div class="card" style="margin-bottom:25px">
+                    <div class="card-body">
+                        <h6><b>Question-@qNumber:</b> @q2.Title</h6>
+                        <hr />
+                        <ul>
+                            @foreach (var q2option in q2.Options)
+                            {
+                                <li>@q2option</li>
+                            }
+                        </ul>
+                        <hr />
+                        <p><b>Your Answer: </b> @ViewBag.RespondentAnswers.Answers[qNumber-1]</p>
+                    </div>
+                </div>
+            </div>
+            qNumber++;
+        }
+    </div>
+
+}
+
+
+<script src="~/vendor/jquery/jquery.min.js"></script>
+<script>
+
+</script>

@@ -1,0 +1,18 @@
+﻿@model Byte[]
+@{
+    ViewData["Title"] = "SurveyQrCode";
+    Layout = null;
+}
+
+@if (Model != null)
+{
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model))" height="500" width="500" />
+            </div>
+        </div>
+    </div>
+}
+

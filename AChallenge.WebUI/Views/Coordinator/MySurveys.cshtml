@@ -1,0 +1,104 @@
+﻿@model IEnumerable<AChallenge.Models.Concrete.Survey>
+@{
+    ViewData["Title"] = "MySurveys";
+    Layout = "~/Views/Shared/_LayoutCoordinator.cshtml";
+}
+
+<h2 class="text-center">My Surveys</h2>
+<a href="/Coordinator/AddSurvey/" class="btn btn-info">Create a new survey</a>
+<hr />
+
+<div class="card">
+    <div class="card-body">
+        @if (TempData["MsgSuccess"] != null)
+        {
+            <div class="alert alert-success">@TempData["MsgSuccess"]</div>
+        }
+        @if (Model.Count() > 0)
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                    <thead>
+                        <tr role="row">
+                            <th>Id</th>
+                            <th>Created Date</th>
+                            <th>Is Visible</th>
+                            <th>Responses</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        @foreach (var item in Model)
+                        {
+                            var tm = "#ModalEdit" + item.Id;
+                            var mid = "ModalEdit" + item.Id;
+
+                            <tr role="row" class="odd">
+                                <td>@item.Id</td>
+                                <td>@item.CreatedDate</td>
+                                <td>@item.IsVisible</td>
+                                <td>
+                                    <a href="/Coordinator/Responses/@item.Id" class="btn btn-success btn-sm">Show Responses</a>
+                                </td>
+                                <td style="width:25%">
+                                    <a href="/Coordinator/Questions/@item.Id" class="btn btn-info btn-sm">Edit Questions</a>
+                                    <a href="" data-target="@tm" data-toggle="modal" data-target="#ModalEdit" class="btn btn-warning btn-sm">Edit Survey</a>
+                                </td>
+                            </tr>
+
+                            <!-- Edit Modal -->
+                            <div id="@mid" class="modal" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <form method="post" asp-controller="Coordinator" asp-action="EditSurvey" asp-route-Id="@item.Id">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Edit Survey <small><a href="/Coordinator/DeleteSurvey/@item.Id" class="btn btn-danger btn-sm">Delete</a></small></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label>Title</label>
+                                                    <input id="Title" name="Title" class="form-control" type="text" value="@item.Title" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Description</label>
+                                                    <input id="Description" name="Description" class="form-control" type="text" value="@item.Description" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Is Visible</label>
+                                                    <select id="IsVisible" name="IsVisible" class="form-control">
+                                                        <option>@item.IsVisible</option>
+                                                        <option>true</option>
+                                                        <option>false</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Edit Survey</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <h4 class="text-center">You didn't add a survey yet</h4>
+        }
+    </div>
+</div>
+
+<script src="~/vendor/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable();
+    });
+</script>

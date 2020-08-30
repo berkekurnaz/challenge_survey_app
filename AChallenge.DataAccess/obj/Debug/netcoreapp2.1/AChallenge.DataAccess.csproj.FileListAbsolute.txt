@@ -1,0 +1,12 @@
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\bin\Debug\netcoreapp2.1\AChallenge.DataAccess.deps.json
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\bin\Debug\netcoreapp2.1\AChallenge.DataAccess.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\obj\Debug\netcoreapp2.1\AChallenge.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\obj\Debug\netcoreapp2.1\AChallenge.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\obj\Debug\netcoreapp2.1\AChallenge.DataAccess.AssemblyInfo.cs
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\bin\Debug\netcoreapp2.1\AChallenge.DataAccess.pdb
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\bin\Debug\netcoreapp2.1\AChallenge.Models.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\bin\Debug\netcoreapp2.1\AChallenge.Models.pdb
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\obj\Debug\netcoreapp2.1\AChallenge.DataAccess.csprojAssemblyReference.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\obj\Debug\netcoreapp2.1\AChallenge.DataAccess.csproj.CopyComplete
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\obj\Debug\netcoreapp2.1\AChallenge.DataAccess.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.DataAccess\obj\Debug\netcoreapp2.1\AChallenge.DataAccess.pdb

@@ -1,0 +1,38 @@
+﻿@model AChallenge.Models.Concrete.Survey
+@{
+    ViewData["Title"] = "OpenSurvey";
+    Layout = "~/Views/Shared/_LayoutCoordinator.cshtml";
+}
+
+<div class="card">
+    <div class="card-body text-center">
+        <h4>@Model.Title</h4>
+        <a href="/Coordinator/SurveyQrCode/@Model.Id" class="btn btn-info btn-sm" target="_blank">Show Survey QR Code</a>
+        <hr />
+    </div>
+</div>
+<br />
+<div class="row">
+    @{
+        int qNumber = 1;
+    }
+    @foreach (var q2 in Model.Questions)
+    {
+        <div class="col-md-6">
+            <div class="card" style="margin-bottom:25px">
+                <div class="card-body">
+                    <h6><b>Question-@qNumber:</b> @q2.Title</h6>
+                    <hr />
+                    <ul>
+                        @foreach (var q2option in q2.Options)
+                        {
+                            <li>@q2option</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        qNumber++;
+    }
+</div>
+

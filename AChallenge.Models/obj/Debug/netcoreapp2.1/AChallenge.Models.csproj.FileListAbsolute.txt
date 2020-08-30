@@ -1,0 +1,9 @@
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Models\bin\Debug\netcoreapp2.1\AChallenge.Models.deps.json
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Models\bin\Debug\netcoreapp2.1\AChallenge.Models.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Models\obj\Debug\netcoreapp2.1\AChallenge.Models.csproj.CoreCompileInputs.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Models\obj\Debug\netcoreapp2.1\AChallenge.Models.AssemblyInfoInputs.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Models\obj\Debug\netcoreapp2.1\AChallenge.Models.AssemblyInfo.cs
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Models\bin\Debug\netcoreapp2.1\AChallenge.Models.pdb
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Models\obj\Debug\netcoreapp2.1\AChallenge.Models.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Models\obj\Debug\netcoreapp2.1\AChallenge.Models.pdb
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Models\obj\Debug\netcoreapp2.1\AChallenge.Models.csprojAssemblyReference.cache

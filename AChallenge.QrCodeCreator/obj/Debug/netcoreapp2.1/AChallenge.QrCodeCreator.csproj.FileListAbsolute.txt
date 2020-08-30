@@ -1,0 +1,9 @@
+C:\Users\Berke\source\repos\AChallenge\AChallenge.QrCodeCreator\bin\Debug\netcoreapp2.1\AChallenge.QrCodeCreator.deps.json
+C:\Users\Berke\source\repos\AChallenge\AChallenge.QrCodeCreator\bin\Debug\netcoreapp2.1\AChallenge.QrCodeCreator.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.QrCodeCreator\obj\Debug\netcoreapp2.1\AChallenge.QrCodeCreator.csprojAssemblyReference.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.QrCodeCreator\obj\Debug\netcoreapp2.1\AChallenge.QrCodeCreator.csproj.CoreCompileInputs.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.QrCodeCreator\obj\Debug\netcoreapp2.1\AChallenge.QrCodeCreator.AssemblyInfoInputs.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.QrCodeCreator\obj\Debug\netcoreapp2.1\AChallenge.QrCodeCreator.AssemblyInfo.cs
+C:\Users\Berke\source\repos\AChallenge\AChallenge.QrCodeCreator\bin\Debug\netcoreapp2.1\AChallenge.QrCodeCreator.pdb
+C:\Users\Berke\source\repos\AChallenge\AChallenge.QrCodeCreator\obj\Debug\netcoreapp2.1\AChallenge.QrCodeCreator.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.QrCodeCreator\obj\Debug\netcoreapp2.1\AChallenge.QrCodeCreator.pdb

@@ -1,0 +1,254 @@
+﻿@model AChallenge.Models.Concrete.Survey
+@{
+    ViewData["Title"] = "Questions";
+    Layout = "~/Views/Shared/_LayoutCoordinator.cshtml";
+}
+
+<div class="card text-center border-left-primary">
+    <div class="card-body">
+        <h3>@Model.Title</h3>
+        <p>@Model.Description</p>
+    </div>
+</div>
+<br />
+<div class="card text-center border-left-primary">
+    <div class="card-body">
+        @if (TempData["MsgSuccess"] != null)
+        {
+            <div class="alert alert-success">@TempData["MsgSuccess"]</div>
+        }
+        <h3>Questions</h3>
+        <a href="" data-toggle="modal" data-target="#ModalAdd" class="btn btn-info">Add a new question</a><br /><br />
+
+        <div class="accordion col-md-10 offset-md-1" id="accordionExample">
+
+            @{
+                int questionNumber = 0;
+                int questionNumberForTitle = 1;
+            }
+            @foreach (var item in Model.Questions)
+            {
+                var tm = "#ModalEdit" + questionNumber;
+                var mid = "ModalEdit" + questionNumber;
+
+                var tm2 = "#ModalDelete" + questionNumber;
+                var mid2 = "ModalDelete" + questionNumber;
+
+                <!-- each question -->
+                <div class="card text-left">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-@questionNumber" aria-expanded="true" aria-controls="collapseOne">
+                                Question-@questionNumberForTitle: @item.Title
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapse-@questionNumber" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <ul>
+                                @foreach (var option in item.Options)
+                                {
+                                    <li>@option</li>
+                                }
+                            </ul>
+                            <row>
+                                <a href="" data-target="@tm" data-toggle="modal" data-target="#ModalEdit" class="btn btn-info">Update</a>
+                                <a href="" data-target="@tm2" data-toggle="modal" data-target="#ModalDelete" class="btn btn-danger">Delete</a>
+                            </row>
+                        </div>
+                    </div>
+                </div>
+                questionNumber++;
+                questionNumberForTitle++;
+
+                <!-- Edit Modal -->
+                <div id="@mid" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <form method="post" asp-controller="Coordinator" asp-action="EditQuestion" asp-route-Id="@Model.Id">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Edit Question</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group" style="display:none">
+                                        <label>Question Number</label>
+                                        <input id="Number" name="Number" type="text" class="form-control" value="@questionNumber" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Question Title</label>
+                                        <input id="Title" name="Title" type="text" class="form-control" value="@item.Title" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Old Questions</label>
+                                        <ul>
+                                            @foreach (var oldQuestion in item.Options)
+                                            {
+                                                <li>@oldQuestion</li>
+                                            }
+                                        </ul>
+
+                                    </div>
+                                    <p>Update Questions</p>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div data-role="dynamic-fields">
+                                                <div class="form-inline">
+                                                    <div class="form-group">
+                                                        <label class="sr-only" for="field-name">Option Name</label>
+                                                        <input type="text" class="form-control" id="fieldName" name="fieldName" placeholder="Option Name" required>
+                                                    </div>
+                                                    <button class="btn btn-danger" data-role="remove">
+                                                        <span class="fa fa-trash"></span>
+                                                    </button>
+                                                    <button class="btn btn-primary" data-role="add">
+                                                        <span class="fa fa-plus"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Edit Question</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Delete Modal -->
+                <div id="@mid2" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <form method="post" asp-controller="Coordinator" asp-action="DeleteQuestion" asp-route-Id="@Model.Id">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Delete Question</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group" style="display:none">
+                                        <label>Question Number</label>
+                                        <input id="Number" name="Number" type="text" class="form-control" value="@questionNumber" required />
+                                    </div>
+                                    <p>
+                                        Do you want to delete this question?
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-danger">Delete Question</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" asp-controller="Coordinator" asp-action="Questions" asp-route-Id="@Model.Id">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add a new question</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label>Question Title</label>
+                        <input id="Title" name="Title" type="text" class="form-control" required />
+                    </div>
+                    <p>Questions</p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div data-role="dynamic-fields">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="field-name">Option Name</label>
+                                        <input type="text" class="form-control" id="fieldName" name="fieldName" placeholder="Option Name" required>
+                                    </div>
+                                    <button class="btn btn-danger" data-role="remove">
+                                        <span class="fa fa-trash"></span>
+                                    </button>
+                                    <button class="btn btn-primary" data-role="add">
+                                        <span class="fa fa-plus"></span>
+                                    </button>
+                                </div>  <!-- /div.form-inline -->
+                            </div>  <!-- /div[data-role="dynamic-fields"] -->
+                        </div>  <!-- /div.col-md-12 -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add Question</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    [data-role="dynamic-fields"] > .form-inline + .form-inline {
+        margin-top: 0.5em;
+    }
+
+    [data-role="dynamic-fields"] > .form-inline [data-role="add"] {
+        display: none;
+    }
+
+    [data-role="dynamic-fields"] > .form-inline:last-child [data-role="add"] {
+        display: inline-block;
+    }
+
+    [data-role="dynamic-fields"] > .form-inline:last-child [data-role="remove"] {
+        display: none;
+    }
+</style>
+<script src="~/vendor/jquery/jquery.min.js"></script>
+<script>
+    $(function () {
+        // Remove button click
+        $(document).on(
+            'click',
+            '[data-role="dynamic-fields"] > .form-inline [data-role="remove"]',
+            function (e) {
+                e.preventDefault();
+                $(this).closest('.form-inline').remove();
+            }
+        );
+        // Add button click
+        $(document).on(
+            'click',
+            '[data-role="dynamic-fields"] > .form-inline [data-role="add"]',
+            function (e) {
+                e.preventDefault();
+                var container = $(this).closest('[data-role="dynamic-fields"]');
+                new_field_group = container.children().filter('.form-inline:first-child').clone();
+                new_field_group.find('input').each(function () {
+                    $(this).val('');
+                });
+                container.append(new_field_group);
+            }
+        );
+    });
+
+
+</script>

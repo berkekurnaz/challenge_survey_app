@@ -1,0 +1,14 @@
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\bin\Debug\netcoreapp2.1\AChallenge.Business.deps.json
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\bin\Debug\netcoreapp2.1\AChallenge.Business.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\bin\Debug\netcoreapp2.1\AChallenge.Business.pdb
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\bin\Debug\netcoreapp2.1\AChallenge.DataAccess.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\bin\Debug\netcoreapp2.1\AChallenge.Models.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\bin\Debug\netcoreapp2.1\AChallenge.DataAccess.pdb
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\bin\Debug\netcoreapp2.1\AChallenge.Models.pdb
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\obj\Debug\netcoreapp2.1\AChallenge.Business.csprojAssemblyReference.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\obj\Debug\netcoreapp2.1\AChallenge.Business.csproj.CoreCompileInputs.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\obj\Debug\netcoreapp2.1\AChallenge.Business.AssemblyInfoInputs.cache
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\obj\Debug\netcoreapp2.1\AChallenge.Business.AssemblyInfo.cs
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\obj\Debug\netcoreapp2.1\AChallenge.Business.csproj.CopyComplete
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\obj\Debug\netcoreapp2.1\AChallenge.Business.dll
+C:\Users\Berke\source\repos\AChallenge\AChallenge.Business\obj\Debug\netcoreapp2.1\AChallenge.Business.pdb
